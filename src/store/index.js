@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { getRecipes } from "../apiCalls";
 
 Vue.use(Vuex);
 
@@ -11,14 +12,18 @@ export const store = new Vuex.Store({
   mutations: {
     updateRecipes(state, recipes) {
       state.recipes = recipes;
+    },
+    addIngredient(state, ingredient) {
+      state.ingredients = [ ...state.ingredients, ingredient ];
     }
   },
   getters: {
     recipes: state => state.recipes
   },
   actions: {
-    setRecipes(context, recipes) {
-      context.commit("updateRecipes", recipes)
+    async setRecipes({commit}, ingredient) {
+      const recipes = await getRecipes(ingredient)
+      commit("updateRecipes", recipes);
     }
   },
   modules: {}

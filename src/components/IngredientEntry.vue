@@ -1,31 +1,36 @@
 <template>
-	<form>
-		<label for="flavor">Enter ingredient</label>
-		<input @keyup="changed" name="ingredient">
-	</form>
+  <form>
+    <label for="flavor">Enter ingredient</label>
+    <input @change="handleChange" name="ingredient" />
+    <button @click="handleClick">Add</button>
+  </form>
 </template>
 
 <script>
 import { store } from "../store";
-import { mapActions } from 'vuex'
+import { mapActions } from "vuex";
 
 export default {
-	name: "IngredientEntry",
-	store,
-	methods: {
-		...mapActions( {
-      setRecipes: 'setRecipes'
-    } ),
-    changed: function(e) {
-			if (e.keyCode === 13) {
-				// submit ingredient to apiCall
-			}
-      this.$store.commit('change', event.target.value)
+  name: "IngredientEntry",
+  store,
+  data: function() {
+    return {
+      input: ""
+    };
+  },
+  methods: {
+    ...mapActions({
+      setRecipes: "setRecipes"
+    }),
+    handleChange: function(e) {
+			this.input = e.target.value;
+    },
+    handleClick: function(e) {
+      e.preventDefault();
+      this.$store.dispatch("setRecipes", this.input);
     }
   }
 };
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
