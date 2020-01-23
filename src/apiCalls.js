@@ -1,9 +1,7 @@
 import axios from "axios";
-// import {apiKey} from "./apiKey";
 
 const baseUrl = "https://api.spoonacular.com/";
-// const apiKey = process.env.API_KEY;
-const apiKey = "26d2ac10e9714fbe9783a0dbc69e8e2f";
+const apiKey = process.env.VUE_APP_API_KEY;
 
 export const getRecipes = async ingredients => {
   const response = await axios.get(

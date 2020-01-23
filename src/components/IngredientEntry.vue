@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { store } from "../store";
+import { store } from "../store/store";
 import { mapActions } from "vuex";
 
 export default {
