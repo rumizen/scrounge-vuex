@@ -13,24 +13,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Poiret+One&display=swap");
 @import "../variables.scss";
 header {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: .25rem 0rem;
 }
 h1 {
 	font-family: "Poiret One", cursive;
-	font-size: 2.75rem;
+	font-size: 3rem;
 	margin: 0;
 	color: $primary;
 }
 h4 {
 	margin: 0;
 	font-weight: 100;
-	font-size: .95rem;
+	font-size: 1rem;
 	color: $tertiary;
 }
 </style>

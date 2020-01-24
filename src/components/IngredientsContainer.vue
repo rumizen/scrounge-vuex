@@ -26,10 +26,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+div {
+  display: flex;
+  justify-content: center;
+}
 section {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 0.5rem;
+  width: 50%;
+  flex-wrap: wrap;
 }
 </style>

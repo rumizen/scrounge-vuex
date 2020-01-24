@@ -28,4 +28,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@import "../variables.scss";
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>

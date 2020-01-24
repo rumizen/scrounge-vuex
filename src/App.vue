@@ -1,8 +1,10 @@
 <template>
   <main id="app">
     <Header />
-    <IngredientEntry />
-    <IngredientsContainer />
+    <div class="sticky-container">
+      <IngredientEntry />
+      <IngredientsContainer />
+    </div>
     <RecipesContainer />
   </main>
 </template>
@@ -24,9 +26,24 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
+<style lang="scss">
+@import "./variables.scss";
+body {
+  margin: 0;
+}
 main {
   font-family: "Roboto", sans-serif;
+  background-color: $lightNeutral;
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sticky-container {
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  width: 100%;
 }
 </style>
