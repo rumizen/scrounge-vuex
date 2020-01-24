@@ -20,14 +20,16 @@ export default {
   },
   methods: {
     ...mapActions({
-      setRecipes: "setRecipes"
+			setRecipes: "setRecipes",
+			setIngredient: "setIngredient"
     }),
     handleChange: function(e) {
 			this.input = e.target.value;
     },
     handleClick: function(e) {
       e.preventDefault();
-      this.$store.dispatch("setRecipes", this.input);
+			this.$store.dispatch("setIngredient", this.input);
+			this.$store.dispatch("setRecipes");
     }
   }
 };

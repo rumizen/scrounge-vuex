@@ -9,7 +9,6 @@ export const getRecipes = async ingredients => {
     { params: { apiKey } }
   );
   const results = response.data;
-  console.log(results)
   return results;
 };
 
