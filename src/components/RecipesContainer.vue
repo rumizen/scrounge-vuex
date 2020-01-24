@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h4>Recipes that use your ingredients</h4>
-    <section>
+    <section class="recipe-container">
       <RecipeCard
         v-for="recipe in recipes"
         v-bind:key="recipe"
@@ -30,8 +29,12 @@ export default {
 
 <style scoped lang="scss">
 @import "../variables.scss";
-section {
+.recipe-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+}
+div {
+  width: 90%;
 }
 </style>

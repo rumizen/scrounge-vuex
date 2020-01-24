@@ -1,6 +1,6 @@
 <template>
   <form>
-    <input @change="handleChange" name="ingredient" placeholder="Add an ingredient" />
+    <input @change="handleChange" name="ingredient" placeholder="Enter an ingredient" />
     <button @click="handleClick">Add</button>
   </form>
 </template>
@@ -53,8 +53,12 @@ input {
 	font-size: .9rem;
 	font-weight: 300;
 	padding-left: .5rem;
+	box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
 	transition: all .25s;
 	&:hover {
+		box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+	}
+	&:focus {
 		box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
 	}
 }
