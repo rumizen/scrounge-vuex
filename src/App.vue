@@ -1,10 +1,12 @@
 <template>
-  <div id="app">
+  <main id="app">
     <Header />
-    <IngredientEntry />
-    <IngredientsContainer />
+    <div class="sticky-container">
+      <IngredientEntry />
+      <IngredientsContainer />
+    </div>
     <RecipesContainer />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -24,4 +26,26 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "./variables.scss";
+body {
+  margin: 0;
+}
+main {
+  font-family: "Roboto", sans-serif;
+  // background-color: $lightNeutral;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sticky-container {
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  width: 100%;
+}
+</style>
