@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
+  <main id="app">
     <Header />
     <IngredientEntry />
     <IngredientsContainer />
     <RecipesContainer />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -24,4 +24,9 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap');
+main {
+  font-family: "Roboto", sans-serif;
+}
+</style>

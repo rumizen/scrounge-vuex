@@ -26,11 +26,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: .5rem;
-  }
-
+section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+}
 </style>
