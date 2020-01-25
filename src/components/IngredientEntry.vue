@@ -1,6 +1,6 @@
 <template>
   <form>
-    <input @change="handleChange" name="ingredient" placeholder="Enter an ingredient" />
+    <input @change="handleChange" name="ingredient" placeholder="Enter an ingredient" v-bind:value="this.input" />
     <button @click="handleClick">Add</button>
   </form>
 </template>
@@ -29,7 +29,8 @@ export default {
       e.preventDefault();
 			this.$store.dispatch("setIngredient", this.input);
 			this.$store.dispatch("setRecipes");
-    }
+			this.input = "";
+		}
   }
 };
 </script>
