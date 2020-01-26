@@ -42,13 +42,13 @@ h5 {
   color: white;
   font-weight: 300;
   font-size: 1rem;
-  margin: .5rem;
+  margin: .75rem;
   text-align: center;
 }
 .title-gradient {
   height: 100%;
   width: 100%;
-  background: linear-gradient(0deg, rgba(255,255,255,0) 70%, rgba(0,0,0,.7) 100%);
+  background: linear-gradient(0deg, rgba(255,255,255,0) 70%, rgba(0,0,0,.8) 100%);
   border-radius: .25rem;
 }
 img {

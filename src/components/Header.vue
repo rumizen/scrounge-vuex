@@ -20,6 +20,8 @@ header {
 	justify-content: center;
 	align-items: center;
 	padding: .25rem 0rem;
+	background-color: $lightNeutral;
+	width: 100vw;
 }
 h1 {
 	font-family: "Poiret One", cursive;

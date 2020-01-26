@@ -33,7 +33,6 @@ body {
 }
 main {
   font-family: "Roboto", sans-serif;
-  // background-color: $lightNeutral;
   height: 100vh;
   width: 100vw;
   overflow-y: scroll;
@@ -43,9 +42,19 @@ main {
   align-items: center;
 }
 .sticky-container {
+  display: flex;
   position: sticky;
+  z-index: 100;
   top: 0;
-  padding: 2rem;
-  width: 100%;
+  padding: 1rem;
+  width: 100vw;
+  background-color: $lightNeutral;
+  box-shadow: 0px 8px 9px -9px rgba(0,0,0,0.75);
+}
+
+@media only screen and (max-width: 600px) {
+  .sticky-container {
+    flex-direction: column;
+  }
 }
 </style>

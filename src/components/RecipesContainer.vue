@@ -33,6 +33,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-top: 2rem;
 }
 div {
   width: 90%;
