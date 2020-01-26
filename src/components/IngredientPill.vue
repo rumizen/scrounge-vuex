@@ -1,15 +1,29 @@
 <template>
   <article v-bind:id="title">
     <p>{{ title }}</p>
-    <img src="../assets/whiteX.png" />
+    <img @click="handleClick" src="../assets/whiteX.png" />
   </article>
 </template>
 
 <script>
+import { store } from "../store/store";
+import { mapActions } from "vuex";
+
 export default {
   name: "IngredientPill",
   props: {
     title: String
+  },
+  store,
+  methods: {
+    ...mapActions({
+      setRecipes: "setRecipes",
+      removeIngredient: "removeIngredient"
+    }),
+    handleClick: function() {
+      this.$store.dispatch("removeIngredient", this.title);
+      this.$store.dispatch("setRecipes");
+    }
   }
 };
 </script>
@@ -27,7 +41,7 @@ article {
   font-weight: 100;
   padding: 0.3rem 0.55rem 0.4rem 0.9rem;
   height: 1.75rem;
-  margin: .25rem;
+  margin: 0.25rem;
   transition: all 0.25s;
   &:hover {
     cursor: pointer;

@@ -15,6 +15,12 @@ export const store = new Vuex.Store({
     },
     addIngredient(state, ingredient) {
       state.ingredients = [...state.ingredients, ingredient];
+    },
+    deleteIngredient(state, ingredient) {
+      const updateIngredients = state.ingredients.filter(
+        ing => ing !== ingredient
+      );
+      state.ingredients = updateIngredients;
     }
   },
   getters: {
@@ -50,6 +56,9 @@ export const store = new Vuex.Store({
     },
     setIngredient({ commit }, ingredient) {
       commit("addIngredient", ingredient);
+    },
+    removeIngredient({ commit }, ingredient) {
+      commit("deleteIngredient", ingredient);
     }
   },
   modules: {}
