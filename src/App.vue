@@ -5,7 +5,10 @@
       <IngredientEntry />
       <IngredientsContainer />
     </div>
-    <RecipesContainer />
+    <div class="recipe-section-wrapper">
+      <RecipesContainer />
+      <OpenRecipe v-if="openRecipe" />
+    </div>
   </main>
 </template>
 
@@ -14,14 +17,23 @@ import Header from "./components/Header";
 import IngredientEntry from "./components/IngredientEntry";
 import RecipesContainer from "./components/RecipesContainer";
 import IngredientsContainer from "./components/IngredientsContainer";
+import OpenRecipe from "./components/OpenRecipe";
+import { store } from "./store/store";
 
 export default {
   name: "App",
+  store,
   components: {
     Header,
     IngredientEntry,
     RecipesContainer,
-    IngredientsContainer
+    IngredientsContainer,
+    OpenRecipe
+  },
+  computed: {
+    openRecipe() {
+      return this.$store.state.selectedRecipe;
+    }
   }
 };
 </script>
@@ -49,7 +61,10 @@ main {
   padding: 1rem;
   width: 100vw;
   background-color: $lightNeutral;
-  box-shadow: 0px 8px 9px -9px rgba(0,0,0,0.75);
+  box-shadow: 0px 8px 9px -9px rgba(0, 0, 0, 0.75);
+}
+.recipe-section-wrapper {
+  display: flex;
 }
 
 @media only screen and (max-width: 600px) {

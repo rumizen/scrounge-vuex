@@ -71,6 +71,4 @@ h5 {
   );
   border-radius: 0.25rem;
 }
-img {
-}
 </style>
