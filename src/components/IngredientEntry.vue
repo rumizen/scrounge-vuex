@@ -1,7 +1,7 @@
 <template>
   <form>
-    <input @change="handleChange" name="ingredient" placeholder="Enter an ingredient" v-bind:value="this.input" />
-    <button :disabled="this.input === ''" @click="handleClick">Add</button>
+    <input @change="handleChange" name="ingredient" placeholder="Enter an ingredient" :value="input" />
+    <button :class="{ 'button-active': buttonActive }" :disabled="!buttonActive" @click="handleClick">Add</button>
   </form>
 </template>
 
@@ -14,7 +14,8 @@ export default {
   store,
   data: function() {
     return {
-      input: ""
+			input: "",
+			buttonActive: false
     };
   },
   methods: {
@@ -24,12 +25,18 @@ export default {
     }),
     handleChange: function(e) {
 			this.input = e.target.value;
+			if (this.input.length < 1) {
+				this.buttonActive = false;
+			} else {
+				this.buttonActive = true;
+			}
     },
     handleClick: function(e) {
       e.preventDefault();
 			this.$store.dispatch("setIngredient", this.input);
 			this.$store.dispatch("setRecipes");
 			this.input = "";
+			this.buttonActive = false;
 		}
   }
 };
@@ -70,9 +77,11 @@ button {
 	font-size: 1rem;
 	font-weight: 300;
 	transition: all .25s;
+}
+.button-active {
+	opacity: 1;
 	&:hover {
 		cursor: pointer;
-		opacity: 1;
 	}
 }
 
