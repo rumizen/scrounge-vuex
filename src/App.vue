@@ -12,7 +12,6 @@
       <div class="home-image" v-if="renderDefaults">
         <h4>Turn the food you have left into the meal you'll make again.</h4>
       </div>
-      <RecipesContainer v-if="!renderDefaults" />
       <div v-if="!renderDefaults && selectedRecipe" class="open-recipe-wrapper">
         <div class="toggle-icon-wrapper" @click="handleClick">
           <p class="toggle-text" v-if="!openRecipe">Open</p>
@@ -24,9 +23,12 @@
             <span></span>
           </div>
         </div>
-        <transition name="slide">
-          <OpenRecipe v-if="openRecipe" class="toggle-recipe-container" />
-        </transition>
+        <section class="inner-recipe-section">
+          <RecipesContainer v-if="!renderDefaults" />
+          <transition name="slide">
+            <OpenRecipe v-if="openRecipe" class="toggle-recipe-container" />
+          </transition>
+        </section>
       </div>
     </div>
   </main>
@@ -106,6 +108,7 @@ main {
 .recipe-section-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   height: 80vh;
 }
 .home-image {
@@ -129,10 +132,17 @@ main {
   }
 }
 
+.inner-recipe-section {
+  display: flex;
+  margin-top: .5rem;
+}
+
 .open-recipe-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: relative;
+  z-index: 0;
 }
 .slide-enter-active,
 .slide-leave-active {
@@ -143,7 +153,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 1rem 0.75rem 0rem;
+  margin: 1rem 1rem -.25rem 0rem;
   height: 20px;
   cursor: pointer;
   .toggle-text {

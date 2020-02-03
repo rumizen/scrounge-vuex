@@ -33,9 +33,9 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding-top: 2rem;
+  // padding-top: 2rem;
 }
 div {
-  width: 90%;
+  width: 100%;
 }
 </style>
