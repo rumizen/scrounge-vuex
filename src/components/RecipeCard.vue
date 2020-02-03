@@ -1,8 +1,8 @@
 <template>
   <article
     @click="handleClick"
-    v-bind:id="id"
-    v-bind:style="{ backgroundImage: `url(${image})` }"
+    :id="id"
+    :style="{ backgroundImage: `url(${image})` }"
   >
     <div class="title-gradient">
       <h5>{{ title }}</h5>
@@ -24,10 +24,17 @@ export default {
   },
   methods: {
     ...mapActions({
-      setSelectedRecipe: "setSelectedRecipe"
+      setSelectedRecipe: "setSelectedRecipe",
+      toggleOpenRecipe: "toggleOpenRecipe"
     }),
     handleClick: function() {
       this.$store.dispatch("setSelectedRecipe", this.id);
+      if (!this.$store.state.recipeIsOpen) {
+        this.$store.dispatch(
+          "toggleOpenRecipe",
+          !this.$store.state.recipeIsOpen
+        );
+      }
     }
   }
 };
@@ -47,6 +54,7 @@ article {
   margin: 1rem;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
   border-radius: 0.25rem;
+  animation: fadeIn 2s;
   transition: all 0.25s;
   &:hover {
     cursor: pointer;

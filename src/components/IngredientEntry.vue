@@ -85,9 +85,10 @@ button {
 	}
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   form {
-    margin-bottom: 1rem;
+		margin-bottom: 1rem;
+		min-width: 85vw;
   }
 }
 </style>

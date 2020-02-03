@@ -1,19 +1,22 @@
 <template>
   <section :id="id" class="full-recipe-wrapper">
     <h2>{{ selectedRecipe.title }}</h2>
+    <img :src="selectedRecipe.image" />
+    <h3>Ingredients</h3>
     <ul class="ingredients-list">
       <li
         v-for="ingredient in selectedRecipeIngredients"
         :key="ingredient"
         class="list-item-wrapper"
       >
-        <h4>{{ ingredient.name }}</h4>
+        <h5>{{ ingredient.name }}</h5>
         <p>
-            {{ ingredient.amount.us.value }}
-            {{ ingredient.amount.us.unit }}
+          {{ ingredient.amount.us.value }}
+          {{ ingredient.amount.us.unit }}
         </p>
       </li>
     </ul>
+    <h3>Directions</h3>
     <ul class="steps-list">
       <li
         v-for="step in selectedRecipeSteps[0].steps"
@@ -30,15 +33,22 @@
 <script>
 import { store } from "../store/store";
 import { mapState } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   name: "OpenRecipe",
   store,
+  methods: {
+    ...mapActions({
+      toggleOpenRecipe: "toggleOpenRecipe"
+    })
+  },
   computed: {
     ...mapState({
       selectedRecipe: "selectedRecipe",
       selectedRecipeIngredients: "selectedRecipeIngredients",
       selectedRecipeSteps: "selectedRecipeSteps",
+      recipeIsOpen: "recipeIsOpen"
     })
   }
 };
@@ -48,11 +58,34 @@ export default {
 @import "../variables.scss";
 
 .full-recipe-wrapper {
+  width: 450px;
+  border-radius: 0.25rem 0rem;
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 30vw;
+  background-color: $lightNeutral;
+  color: $primary;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+h2 {
+  margin: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+img {
+  width: 95%;
+  border-radius: 0.25rem;
+  margin-bottom: .5rem;
 }
 .ingredients-list,
 .steps-list {
@@ -63,14 +96,28 @@ export default {
 .list-item-wrapper {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 7px;
   h4 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-weight: 400;
+  }
+  h5 {
     margin: 0;
+    font-weight: 400;
   }
   p {
     margin: 0;
+    font-weight: 100;
+    font-size: .75rem;
   }
 }
 .step-item-wrapper {
   flex-direction: column;
+  p {
+    margin: 0;
+    font-weight: 100;
+    font-size: 1rem;
+  }
 }
 </style>

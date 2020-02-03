@@ -10,7 +10,8 @@ export const store = new Vuex.Store({
     ingredients: [],
     selectedRecipe: null,
     selectedRecipeIngredients: [],
-    selectedRecipeSteps: []
+    selectedRecipeSteps: [],
+    recipeIsOpen: false
   },
   mutations: {
     updateRecipes(state, recipes) {
@@ -33,6 +34,9 @@ export const store = new Vuex.Store({
     },
     updateSelectedRecipeSteps(state, steps) {
       state.selectedRecipeSteps = steps;
+    },
+    toggleRecipe(state, toggle) {
+      state.recipeIsOpen = toggle;
     }
   },
   getters: {
@@ -73,6 +77,9 @@ export const store = new Vuex.Store({
       commit("updateSelectedRecipe", selectedRecipe);
       commit("updateSelectedRecipeIngredients", selectedRecipeIngredients);
       commit("updateSelectedRecipeSteps", selectedRecipeSteps);
+    },
+    toggleOpenRecipe({ commit }, toggle) {
+      commit("toggleRecipe", toggle);
     },
     setIngredient({ commit }, ingredient) {
       commit("addIngredient", ingredient);

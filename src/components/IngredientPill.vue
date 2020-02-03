@@ -40,7 +40,7 @@ article {
   color: white;
   font-weight: 100;
   padding: 0.3rem 0.55rem 0.4rem 0.9rem;
-  height: 1.75rem;
+  height: 1.25rem;
   margin: 0.25rem;
   box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
   transition: all 0.25s;
@@ -56,7 +56,6 @@ img {
   top: 1px;
   &:hover {
     cursor: pointer;
-    opacity: 0.6;
   }
 }
 </style>
