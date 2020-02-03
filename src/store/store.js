@@ -1,13 +1,17 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { getRecipes } from "../apiCalls";
+import { getRecipes, getFullRecipe, getRecipeIngredients, getRecipeSteps } from "../apiCalls";
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
     recipes: [],
-    ingredients: []
+    ingredients: [],
+    selectedRecipe: null,
+    selectedRecipeIngredients: [],
+    selectedRecipeSteps: [],
+    recipeIsOpen: false
   },
   mutations: {
     updateRecipes(state, recipes) {
@@ -21,6 +25,18 @@ export const store = new Vuex.Store({
         ing => ing !== ingredient
       );
       state.ingredients = updateIngredients;
+    },
+    updateSelectedRecipe(state, recipe) {
+      state.selectedRecipe = recipe;
+    },
+    updateSelectedRecipeIngredients(state, ingredients) {
+      state.selectedRecipeIngredients = ingredients;
+    },
+    updateSelectedRecipeSteps(state, steps) {
+      state.selectedRecipeSteps = steps;
+    },
+    toggleRecipe(state, toggle) {
+      state.recipeIsOpen = toggle;
     }
   },
   getters: {
@@ -53,6 +69,17 @@ export const store = new Vuex.Store({
       const ingredientQuery = getters.ingredientQuery;
       const recipes = await getRecipes(ingredientQuery);
       commit("updateRecipes", recipes);
+    },
+    async setSelectedRecipe({ commit }, id) {
+      const selectedRecipe = await getFullRecipe(id);
+      const selectedRecipeIngredients = await getRecipeIngredients(id);
+      const selectedRecipeSteps = await getRecipeSteps(id);
+      commit("updateSelectedRecipe", selectedRecipe);
+      commit("updateSelectedRecipeIngredients", selectedRecipeIngredients);
+      commit("updateSelectedRecipeSteps", selectedRecipeSteps);
+    },
+    toggleOpenRecipe({ commit }, toggle) {
+      commit("toggleRecipe", toggle);
     },
     setIngredient({ commit }, ingredient) {
       commit("addIngredient", ingredient);

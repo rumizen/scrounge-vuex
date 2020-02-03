@@ -1,5 +1,4 @@
 <template>
-  <div>
     <section>
       <IngredientPill
         v-for="ingredient in ingredients"
@@ -7,7 +6,6 @@
         v-bind:title="ingredient"
       />
     </section>
-  </div>
 </template>
 
 <script>
@@ -26,16 +24,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-div {
-  display: flex;
-  justify-content: center;
-}
 section {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0.5rem;
-  width: 50%;
   flex-wrap: wrap;
+  margin: 0rem 1rem 0rem 0rem;
+}
+@media only screen and (max-width: 600px) {
+  section {
+    margin: 0rem 2rem;
+  }
 }
 </style>
