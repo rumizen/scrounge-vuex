@@ -13,16 +13,11 @@
         <h4>Turn the food you have left into the meal you'll make again.</h4>
       </div>
       <RecipesContainer v-if="!renderDefaults" />
-      <div class="open-recipe-wrapper">
-        <div class="toggle-icon-wrapper">
+      <div v-if="!renderDefaults && selectedRecipe" class="open-recipe-wrapper">
+        <div class="toggle-icon-wrapper" @click="handleClick">
           <p class="toggle-text" v-if="!openRecipe">Open</p>
           <p class="toggle-text" v-if="openRecipe">Close</p>
-          <div
-            v-if="!renderDefaults"
-            id="toggle-icon"
-            :class="{ open: openRecipe }"
-            @click="handleClick"
-          >
+          <div id="toggle-icon" :class="{ open: openRecipe }">
             <span></span>
             <span></span>
             <span></span>
@@ -59,7 +54,8 @@ export default {
   },
   computed: {
     ...mapState({
-      recipeIsOpen: "recipeIsOpen"
+      recipeIsOpen: "recipeIsOpen",
+      selectedRecipe: "selectedRecipe"
     }),
     openRecipe() {
       return this.$store.state.recipeIsOpen;
@@ -147,12 +143,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 1rem .7rem 0rem;
+  margin: 1rem 1rem 0.75rem 0rem;
   height: 20px;
+  cursor: pointer;
   .toggle-text {
     margin: 0;
-    margin-right: .75rem;
-    margin-bottom: .25rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.25rem;
     color: $primary;
     font-weight: 300;
     font-size: 1rem;
@@ -177,7 +174,6 @@ main {
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
-  cursor: pointer;
 }
 
 #toggle-icon span {

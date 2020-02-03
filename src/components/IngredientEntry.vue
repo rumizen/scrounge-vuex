@@ -1,6 +1,6 @@
 <template>
   <form>
-    <input @change="handleChange" name="ingredient" placeholder="Enter an ingredient" :value="input" />
+    <input @input="handleChange" name="ingredient" placeholder="Enter an ingredient" :value="input" />
     <button :class="{ 'button-active': buttonActive }" :disabled="!buttonActive" @click="handleClick">Add</button>
   </form>
 </template>
