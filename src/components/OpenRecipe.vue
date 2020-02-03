@@ -1,6 +1,7 @@
 <template>
   <section :id="id" class="full-recipe-wrapper">
     <h2>{{ selectedRecipe.title }}</h2>
+    <p>Original recipe by <a :href="selectedRecipe.sourceUrl" target="_blank">{{ selectedRecipe.sourceName }}</a></p>
     <img :src="selectedRecipe.image" />
     <h3>Ingredients</h3>
     <ul class="ingredients-list">
@@ -17,7 +18,8 @@
       </li>
     </ul>
     <h3>Directions</h3>
-    <ul class="steps-list">
+    <p v-if="!selectedRecipeSteps.length > 0">No directions provided</p>
+    <ul v-if="selectedRecipeSteps.length > 0" class="steps-list">
       <li
         v-for="step in selectedRecipeSteps[0].steps"
         :key="step"
@@ -71,9 +73,20 @@ export default {
   background-color: $lightNeutral;
   color: $primary;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  margin-top: .98rem;
+  p {
+    font-weight: 100;
+    font-size: .9rem;
+    margin: .25rem 0rem 1rem 0rem;
+  }
+  a {
+    text-decoration: none;
+    color: $tertiary;
+    font-weight: 300;
+  }
 }
 h2 {
-  margin: 1rem;
+  margin: 1rem 0rem 0rem 0rem;
   font-size: 1.2rem;
   font-weight: 500;
 }

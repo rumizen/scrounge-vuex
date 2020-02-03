@@ -4,11 +4,17 @@
       <h1>Scrounge</h1>
       <h4>Cook with what you've got</h4>
     </div>
-		<div class="icons-container">
-			<img src="../assets/github.png" />
-			<img src="../assets/linkedin.png" />
-			<img src="../assets/instagram.png" />
-		</div>
+    <div class="icons-container">
+      <a href="https://github.com/rumizen" target="_blank"
+        ><img src="../assets/github.png"
+      /></a>
+      <a href="https://www.linkedin.com/in/steverumizen/" target="_blank"
+        ><img src="../assets/linkedin.png"
+      /></a>
+      <a href="https://www.instagram.com/rumizen/" target="_blank"
+        ><img src="../assets/instagram.png"
+      /></a>
+    </div>
   </header>
 </template>
 
@@ -18,7 +24,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../variables.scss";
 header {
@@ -30,13 +35,13 @@ header {
   width: 100vw;
 }
 .scrounge-logo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
 }
 .icons-container {
-	margin-right: 2rem;
+  margin-right: 2rem;
 }
 h1 {
   font-family: "Poiret One", cursive;
@@ -50,25 +55,27 @@ h4 {
   font-size: 1rem;
   color: $tertiary;
 }
-img {
-	height: 2rem;
-	margin-left: .25rem;
-	transition: all .25s;
-	&:hover {
-		cursor: pointer;
-		opacity: .9;
-	}
+a {
+  img {
+    height: 2rem;
+    margin-left: 0.25rem;
+    transition: all 0.25s;
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
 }
 
 @media only screen and (max-width: 700px) {
   img {
-		height: 1.5rem;
-	}
-	h1 {
-  	font-size: 2rem;
-	}
-	h4 {
-  	font-size: .5rem;
-	}
+    height: 1.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 0.5rem;
+  }
 }
 </style>
