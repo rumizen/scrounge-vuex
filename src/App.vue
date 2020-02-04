@@ -12,8 +12,8 @@
       <div class="home-image" v-if="renderDefaults">
         <h4>Turn the food you have left into the meal you'll make again.</h4>
       </div>
-      <div v-if="!renderDefaults && selectedRecipe" class="open-recipe-wrapper">
-        <div class="toggle-icon-wrapper" @click="handleClick">
+      <div v-if="!renderDefaults" class="open-recipe-wrapper">
+        <div v-if="selectedRecipe" class="toggle-icon-wrapper" @click="handleClick">
           <p class="toggle-text" v-if="!openRecipe">Open</p>
           <p class="toggle-text" v-if="openRecipe">Close</p>
           <div id="toggle-icon" :class="{ open: openRecipe }">
