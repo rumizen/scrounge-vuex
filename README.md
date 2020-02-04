@@ -7,6 +7,8 @@ Created by Steve Rumizen
 ```
 1. npm install
 2. Get a free api key from [Spoonacular](https://spoonacular.com/food-api/pricing)
+3. Create a .env file in the root directory
+4. in the .env file, add the line `VUE_APP_API_KEY=[your new SPoonacular api key]`
 3. npm run serve
 4. Open Scrounge in a browser at localhost:8080 
 ```
