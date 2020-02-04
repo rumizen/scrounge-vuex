@@ -16,7 +16,7 @@ Created by Steve Rumizen
 
 ##### The situation:
 
-It's Sunday evening and you didn't get a chance to do your weekly grocery trip. You're kitchen is far from fully-stocked but you need to come up with an adequate meal for your family.
+It's Sunday evening and you didn't get a chance to do your weekly grocery trip. Your kitchen is far from fully-stocked but you need to come up with an adequate meal for your family.
 
 ##### The solution:
 
@@ -24,18 +24,22 @@ Scrounge gives you a straightforward way to plug in the few ingredients you have
 
 ## UI/UX
 
-
+#### Landing Page
 ![Scrounge landing page](./src/assets/readme-files/scrounge-default.png?raw=true "Landing Page")
 
+#### Find Recipes
 ![Scrounge in action](./src/assets/readme-files/scrounge-main.png?raw=true "Basic Usage")
 
+#### Sticky Input
 ![Scrounge sticky header](./src/assets/readme-files/scrounge-header.png?raw=true "Sticky Header")
 
+#### Sliding Sidebar
 ![Scrounge sliding sidebar](./src/assets/readme-files/scrounge-sidebar.png?raw=true "Sliding Sidebar")
 
+#### Responsive Design
 ![Scrounge responsiveness main](./src/assets/readme-files/scrounge-mobile-main.png?raw=true "Mobile Responsiveness")
 
-
+#### Responsive Input
 ![Scrounge responsiveness header](./src/assets/readme-files/scrounge-mobile-header.png?raw=true "Mobile Header Responsiveness")
 
 
