@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.vue matches the snapshot 1`] = `
+<main
+  id="app"
+>
+  <header-stub />
+   
+  <div
+    class="sticky-container"
+  >
+    <ingrediententry-stub />
+     
+    <p
+      class="default-message"
+    >
+      
+      We'll show you recipes that match the ingredients you have.
+    
+    </p>
+     
+    <!---->
+  </div>
+   
+  <div
+    class="recipe-section-wrapper"
+  >
+    <div
+      class="home-image"
+    >
+      <h4>
+        Turn the food you have left into the meal you'll make again.
+      </h4>
+    </div>
+     
+    <!---->
+  </div>
+</main>
+`;
