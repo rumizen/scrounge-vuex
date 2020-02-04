@@ -6,7 +6,7 @@ Created by Steve Rumizen
 
 ```
 1. npm install
-2. Get a free api key from ![Spoonacular](https://spoonacular.com/food-api/pricing)
+2. Get a free api key from [Spoonacular](https://spoonacular.com/food-api/pricing)
 3. npm run serve
 4. Open Scrounge in a browser at localhost:8080 
 ```
@@ -27,11 +27,33 @@ Scrounge gives you a straightforward way to plug in the few ingredients you have
 
 ![Scrounge landing page](./src/assets/readme-files/scrounge-default.png?raw=true "Landing Page")
 
+![Scrounge in action](./src/assets/readme-files/scrounge-main.png?raw=true "Basic Usage")
+
+![Scrounge sticky header](./src/assets/readme-files/scrounge-header.png?raw=true "Sticky Header")
+
+![Scrounge sliding sidebar](./src/assets/readme-files/scrounge-sidebar.png?raw=true "Sliding Sidebar")
+
+![Scrounge responsiveness main](./src/assets/readme-files/scrounge-mobile-main.png?raw=true "Mobile Responsiveness")
+
+
+![Scrounge responsiveness header](./src/assets/readme-files/scrounge-mobile-header.png?raw=true "Mobile Header Responsiveness")
+
 
 ## The Tech
 
 
-- ![Spoonacular](https://spoonacular.com/food-api/) API for the backend
+- [Spoonacular](https://spoonacular.com/food-api/) API for the backend
 - Vue and Vuex for the front end
 - SCSS for fully custom design
+
+
+## Upcoming Features
+
+
+- Ability to create a quick list of potential recipes as the user browses
+- Ability to filter recipes by healthiness, user rating, vegan, and vegetarian
+- Native mobile version
+
+
+## Production Version Coming Soon!
 
