@@ -1,5 +1,5 @@
 <template>
-  <section :id="id" class="full-recipe-wrapper">
+  <section class="full-recipe-wrapper">
     <h2>{{ selectedRecipe.title }}</h2>
     <p>Original recipe by <a :href="selectedRecipe.sourceUrl" target="_blank">{{ selectedRecipe.sourceName }}</a></p>
     <img :src="selectedRecipe.image" />
@@ -35,16 +35,10 @@
 <script>
 import { store } from "../store/store";
 import { mapState } from "vuex";
-import { mapActions } from "vuex";
 
 export default {
   name: "OpenRecipe",
   store,
-  methods: {
-    ...mapActions({
-      toggleOpenRecipe: "toggleOpenRecipe"
-    })
-  },
   computed: {
     ...mapState({
       selectedRecipe: "selectedRecipe",

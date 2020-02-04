@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.vue matches the snapshot 1`] = `
+<header>
+  <div
+    class="scrounge-logo"
+  >
+    <h1>
+      Scrounge
+    </h1>
+     
+    <h4>
+      Cook with what you've got
+    </h4>
+  </div>
+   
+  <div
+    class="icons-container"
+  >
+    <a
+      href="https://github.com/rumizen"
+      target="_blank"
+    >
+      <img
+        src="../assets/github.png"
+      />
+    </a>
+     
+    <a
+      href="https://www.linkedin.com/in/steverumizen/"
+      target="_blank"
+    >
+      <img
+        src="../assets/linkedin.png"
+      />
+    </a>
+     
+    <a
+      href="https://www.instagram.com/rumizen/"
+      target="_blank"
+    >
+      <img
+        src="../assets/instagram.png"
+      />
+    </a>
+  </div>
+</header>
+`;
