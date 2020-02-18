@@ -263,5 +263,10 @@ main {
       display: none;
     }
   }
+  .inner-recipe-section {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: .5rem;
+}
 }
 </style>

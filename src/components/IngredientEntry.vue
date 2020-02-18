@@ -65,6 +65,7 @@ input {
 	transition: all .25s;
 }
 button {
+	-webkit-appearance: none;
 	width: 60px;
 	height: 100%;
 	border-radius: 0rem .25rem .25rem 0rem;

@@ -1,7 +1,12 @@
 <template>
   <section class="full-recipe-wrapper">
     <h2>{{ selectedRecipe.title }}</h2>
-    <p>Original recipe by <a :href="selectedRecipe.sourceUrl" target="_blank">{{ selectedRecipe.sourceName }}</a></p>
+    <p>
+      Original recipe by
+      <a :href="selectedRecipe.sourceUrl" target="_blank">{{
+        selectedRecipe.sourceName
+      }}</a>
+    </p>
     <img :src="selectedRecipe.image" />
     <h3>Ingredients</h3>
     <ul class="ingredients-list">
@@ -67,11 +72,11 @@ export default {
   background-color: $lightNeutral;
   color: $primary;
   box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  margin-top: .98rem;
+  margin-top: 0.98rem;
   p {
     font-weight: 100;
-    font-size: .9rem;
-    margin: .25rem 0rem 1rem 0rem;
+    font-size: 0.9rem;
+    margin: 0.25rem 0rem 1rem 0rem;
   }
   a {
     text-decoration: none;
@@ -92,7 +97,7 @@ h3 {
 img {
   width: 95%;
   border-radius: 0.25rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .ingredients-list,
 .steps-list {
@@ -116,7 +121,7 @@ img {
   p {
     margin: 0;
     font-weight: 100;
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 }
 .step-item-wrapper {
@@ -125,6 +130,15 @@ img {
     margin: 0;
     font-weight: 100;
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .full-recipe-wrapper {
+    width: 100%;
+    border-radius: 0rem;
+    position: relative;
+    top: 0;
   }
 }
 </style>
