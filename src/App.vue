@@ -13,7 +13,11 @@
         <h4>Turn the food you have left into the meal you'll make again.</h4>
       </div>
       <div v-if="!renderDefaults" class="open-recipe-wrapper">
-        <div v-if="selectedRecipe" class="toggle-icon-wrapper" @click="handleClick">
+        <div
+          v-if="selectedRecipe"
+          class="toggle-icon-wrapper"
+          @click="handleClick"
+        >
           <p class="toggle-text" v-if="!openRecipe">Open</p>
           <p class="toggle-text" v-if="openRecipe">Close</p>
           <div id="toggle-icon" :class="{ open: openRecipe }">
@@ -134,7 +138,7 @@ main {
 
 .inner-recipe-section {
   display: flex;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .open-recipe-wrapper {
@@ -153,7 +157,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 1rem -.25rem 0rem;
+  margin: 1rem 1rem -0.25rem 0rem;
   height: 20px;
   cursor: pointer;
   .toggle-text {
@@ -245,6 +249,9 @@ main {
 }
 
 @media only screen and (max-width: 700px) {
+  main {
+    overflow-y: scroll;
+  }
   .sticky-container {
     flex-direction: column;
     align-items: center;
@@ -264,9 +271,9 @@ main {
     }
   }
   .inner-recipe-section {
-  display: flex;
-  flex-direction: column-reverse;
-  margin-top: .5rem;
-}
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 0.5rem;
+  }
 }
 </style>
